@@ -1,0 +1,9 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="org.springframework.mail.MailMessage"><rhs name\="org.springframework.mail.SimpleMailMessage"/></lhs><lhs name\="org.springframework.mail.SimpleMailMessage"><rhs name\="org.springframework.mail.SimpleMailMessage"/></lhs><lhs name\="javax.mail.internet.MimePart"><rhs name\="javax.mail.internet.MimeMessage"/></lhs><lhs name\="javax.mail.Part"><rhs name\="javax.mail.internet.MimeMessage"/></lhs><lhs name\="javax.mail.Message"><rhs name\="javax.mail.internet.MimeMessage"/></lhs><lhs name\="javax.mail.internet.MimeMessage"><rhs name\="javax.mail.internet.MimeMessage"/></lhs><lhs name\="org.springframework.mail.javamail.MimeMessageHelper"><rhs name\="org.springframework.mail.javamail.MimeMessageHelper"/></lhs><lhs name\="org.springframework.core.io.AbstractFileResolvingResource"><rhs name\="org.springframework.core.io.ClassPathResource"/></lhs><lhs name\="org.springframework.core.io.AbstractResource"><rhs name\="org.springframework.core.io.ClassPathResource"/></lhs><lhs name\="org.springframework.core.io.Resource"><rhs name\="org.springframework.core.io.ClassPathResource"/></lhs><lhs name\="org.springframework.core.io.InputStreamSource"><rhs name\="org.springframework.core.io.ClassPathResource"/></lhs><lhs name\="org.springframework.core.io.ClassPathResource"><rhs name\="org.springframework.core.io.ClassPathResource"/></lhs></history>
+content_assist_number_of_computers=15
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=20
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

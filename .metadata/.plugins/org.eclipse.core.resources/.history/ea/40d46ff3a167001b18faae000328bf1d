@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Font -->
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700"
+	rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" th:href="@{css/bootstrap-reboot.min.css}">
+<link rel="stylesheet" th:href="@{css/bootstrap-grid.min.css}">
+<link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
+<link rel="stylesheet" th:href="@{css/jquery.mCustomScrollbar.min.css}">
+<link rel="stylesheet" th:href="@{css/nouislider.min.css}">
+<link rel="stylesheet" th:href="@{css/ionicons.min.css}">
+<link rel="stylesheet" th:href="@{css/plyr.css}">
+<link rel="stylesheet" th:href="@{css/photoswipe.css}">
+<link rel="stylesheet" th:href="@{css/default-skin.css}">
+<link rel="stylesheet" th:href="@{css/main.css}">
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" href="icon/favicon-32x32.png"
+	sizes="32x32">
+<link rel="apple-touch-icon" href="icon/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="72x72"
+	href="icon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114"
+	href="icon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="144x144"
+	href="icon/apple-touch-icon-144x144.png">
+
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Dmitry Volkov">
+<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+
+</head>
+<body class="body">
+
+	<!-- header -->
+	<header class="header">
+		<div class="header__wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="header__content">
+							<!-- header logo -->
+							<a href="index.html" class="header__logo"> <img
+								src="img/logo.svg" alt="">
+							</a>
+							<!-- end header logo -->
+
+							<!-- header nav -->
+							<ul class="header__nav">
+								<!-- dropdown -->
+								<li class="header__nav-item"><a
+									class="dropdown-toggle header__nav-link" href="#" role="button"
+									id="dropdownMenuHome" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">Home</a>
+
+									<ul class="dropdown-menu header__dropdown-menu"
+										aria-labelledby="dropdownMenuHome">
+										<li><a href="index.html">Home slideshow bg</a></li>
+										<li><a href="index2.html">Home static bg</a></li>
+									</ul></li>
+								<!-- end dropdown -->
+
+								<!-- dropdown -->
+								<li class="header__nav-item"><a
+									class="dropdown-toggle header__nav-link" href="#" role="button"
+									id="dropdownMenuCatalog" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">Catalog</a>
+
+									<ul class="dropdown-menu header__dropdown-menu"
+										aria-labelledby="dropdownMenuCatalog">
+										<li><a th:href="@{/productList}">Catalog Grid</a></li>
+										<li><a th:href="@{/catalog2}">Catalog List</a></li>
+										<li><a th:href="@{/details2}">Details Movie</a></li>
+										<li><a th:href="@{/details1}">Details TV Series</a></li>
+									</ul></li>
+								<!-- end dropdown -->
+
+								
+								<li class="header__nav-item">
+								<th:block sec:authorize="hasAnyRole('ROLE_MANAGER','ROLE_EMPLOYEE')">
+									<a  th:href="@{/admin/orderList}"class="header__nav-link">Order List</a>
+									</th:block>
+								</li>
+
+								<li class="header__nav-item">
+								 <th:block sec:authorize="hasRole('ROLE_MANAGER')">
+									<a th:href="@{/admin/product}" class="header__nav-link">Create Product</a>
+									</th:block>
+								</li>
+
+								<!-- dropdown -->
+								
+								<!-- end dropdown -->
+							</ul>
+							<!-- end header nav -->
+
+							<!-- header auth -->
+							<div class="header__auth">
+								<button class="header__search-btn" type="button">
+									<i class="icon ion-ios-search"></i>
+								</button>
+								<th:block sec:authorize="isAuthenticated()">
+         							
+								<a th:href="@{/admin/accountInfo}" th:utext="${#request.userPrincipal.name}" >..</a>
+								<a th:href="@{/admin/logout}" class="header__sign-in">Logout</a>
+								</th:block>
+								
+								<th:block sec:authorize="!isAuthenticated()">
+         						<a th:href="@{/admin/login}" class="header__sign-in">Login</a>
+								</th:block>
+							</div>
+							<!-- end header auth -->
+
+							<!-- header menu btn -->
+							<button class="header__btn" type="button">
+								<span></span> <span></span> <span></span>
+							</button>
+							<!-- end header menu btn -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- header search -->
+		<form action="#" class="header__search">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="header__search-content">
+							<input type="text"
+								placeholder="Search for a movie, TV Series that you are looking for">
+
+							<button type="button">search</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<!-- end header search -->
+	</header>
+	<!-- end header -->
+
+	<!-- home -->
+	<section class="home">
+      <div class="page-title">Confirmation</div>
+      <div class="customer-info-container">
+         <h3>Customer Information:</h3>
+         <ul>
+            <li>Name: <span th:utext="${myCart.customerInfo.name}"></span></li>
+            <li>Email: <span th:utext="${myCart.customerInfo.email}"></span></li>
+            <li>Phone: <span th:utext="${myCart.customerInfo.phone}"></span></li>
+            <li>Address: <span th:utext="${myCart.customerInfo.address}"></span></li>
+         </ul>
+         <h3>Cart Summary:</h3>
+         <ul>
+            <li>Quantity: <span th:utext="${myCart.quantityTotal}"></span>$</li>
+            <li>Total:
+               <span class="total"
+                  th:utext="${#numbers.formatDecimal(myCart.amountTotal,3,2,'COMMA')}">  
+               </span>
+            </li>
+         </ul>
+      </div>
+      <form method="POST" th:action="@{/shoppingCartConfirmation}">
+         <!-- Edit Cart -->
+         <a class="navi-item" th:href="@{/shoppingCart}">
+         Edit Cart
+         </a>
+         <!-- Edit Customer Info -->
+         <a class="navi-item" th:href="@{/shoppingCartCustomer}">
+         Edit Customer Info
+         </a>
+         <!-- Send/Save -->
+         <input type="submit" value="Send" class="button-send-sc" />
+      </form>
+      <div class="container">
+         <div class="product-preview-container" th:each="cartLineInfo : ${myCart.cartLines}">
+            <ul>
+               <li>
+                  <img class="product-image"
+                     src="@{|/productImage?code=${cartLineInfo.productInfo.code}|}" />
+               </li>
+               <li>
+                  Code: <span th:utext="${cartLineInfo.productInfo.code}"></span>
+                  <input
+                     type="hidden" name="code" th:value="${cartLineInfo.productInfo.code}" />
+               </li>
+               <li>Name: <span th:utext="${cartLineInfo.productInfo.name}"></span></li>
+               <li>Price:
+                  <span class="price"
+                     th:utext="${#numbers.formatDecimal(cartLineInfo.productInfo.price,3,2,'COMMA')}">
+                  </span>
+               </li>
+               <li>Quantity: <span th:utext="${cartLineInfo.quantity}"></span></li>
+               <li>Subtotal:
+                  <span class="subtotal"
+                     th:utext="${#numbers.formatDecimal(cartLineInfo.amount,3,2,'COMMA')}">
+                  </span>
+               </li>
+            </ul>
+         </div>
+      </div>
+       
+
+       
+   </body>
+</html>

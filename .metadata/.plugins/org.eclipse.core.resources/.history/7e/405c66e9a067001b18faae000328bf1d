@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet"> 
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/bootstrap-reboot.min.css">
+	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	<link rel="stylesheet" href="/css/nouislider.min.css">
+	<link rel="stylesheet" href="/css/ionicons.min.css">
+	<link rel="stylesheet" href="/css/plyr.css">
+	<link rel="stylesheet" href="/css/photoswipe.css">
+	<link rel="stylesheet" href="/css/default-skin.css">
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!-- Favicons -->
+	<link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="/icon/favicon-32x32.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="Dmitry Volkov">
+	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+
+</head>
+<body class="body">
+
+	<div class="sign section--bg" data-bg="/img/section/section.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="sign__content">
+						<!-- registration form -->
+						<form class="sign__form"  method="POST" th:object = "${customerForm}" th:action="@{/shoppingCartCustomer}">
+          					<a href="index.html" class="sign__logo">
+								<img src="/img/logo.svg" alt="">
+							</a>
+         <table>
+            <tr>
+               <td style="color: #fff;">Name *</td>
+               <td><input th:field="*{name}" /></td>
+               <td>
+                  <span  class="sign__group"
+                     th:if="${#fields.hasErrors('name')}" th:errors="*{name}">..</span>
+               </td>
+            </tr>
+            <tr>
+               <td style="color: #fff;">Email *</td>
+               <td><input th:field="*{email}" /></td>
+               <td>
+                  <span class="sign__group" style="color: #fff;"
+                     th:if="${#fields.hasErrors('email')}" th:errors="*{email}">..</span>
+               </td>
+            </tr>
+            <tr>
+               <td style="color: #fff;">Phone *</td>
+               <td><input th:field="*{phone}" /></td>
+               <td>
+                  <span class="sign__group" style="color: #fff;"
+                     th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">..</span>
+               </td>
+            </tr>
+            <tr>
+               <td style="color: #fff;">Address *</td>
+               <td><input th:field="*{address}" /></td>
+               <td>
+                  <span class="sign__group" style="color: #fff;"
+                     th:if="${#fields.hasErrors('address')}" th:errors="*{address}">..</span>
+               </td>
+            </tr>
+            <tr>
+               <td>&nbsp;</td>
+               <td><input class="sign__btn" type="submit" value="Submit" /> <input class="sign__btn" type="reset"
+                  value="Reset" /></td>
+            </tr>
+         </table>
+          
+      </form>
+						<!-- registration form -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JS -->
+	<script src="/js/jquery-3.3.1.min.js"></script>
+	<script src="/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
+	<script src="/js/jquery.mousewheel.min.js"></script>
+	<script src="/js/jquery.mCustomScrollbar.min.js"></script>
+	<script src="/js/wNumb.js"></script>
+	<script src="/js/nouislider.min.js"></script>
+	<script src="/js/plyr.min.js"></script>
+	<script src="/js/jquery.morelines.min.js"></script>
+	<script src="/js/photoswipe.min.js"></script>
+	<script src="/js/photoswipe-ui-default.min.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+
+</html>
